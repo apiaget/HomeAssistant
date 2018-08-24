@@ -6,4 +6,4 @@ before_install:
 install:
   - pip3 install homeassistant
 script:
-  - hassio homeassistant check
+  - hass -c . --script check_config
