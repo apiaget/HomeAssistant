@@ -2,14 +2,14 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 0
-  longitude: 0
+  latitude: !secret latitude
+  longitude: !secret longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: 0
+  elevation: !secret elevation
   # metric for Metric, imperial for Imperial
   unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: UTC
+  time_zone: !secret time_zone
   # Customization file
   customize: !include customize.yaml
 
@@ -19,14 +19,21 @@ introduction:
 # Enables the frontend
 frontend:
 
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: !secret panel_iframe_configurator_url
+
 # Enables configuration UI
 config:
 
 http:
   # Secrets are defined in the file secrets.yaml
-  # api_password: !secret http_password
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-  # base_url: example.duckdns.org:8123
+  api_password: !secret http_password
+  base_url: !secret http_base_url
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
 
 # Checks for available updates
 # Note: This component will send some information about your system to
