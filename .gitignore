@@ -3,5 +3,6 @@
 !.gitignore
 !*.sh
 !.travis.yml
+!README.md
 secrets.yaml
 known_devices.yaml
