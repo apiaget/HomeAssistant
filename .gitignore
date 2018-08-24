@@ -4,5 +4,7 @@
 !*.sh
 !.travis.yml
 !README.md
+!privkey.pem
+!fullchain.pem
 secrets.yaml
 known_devices.yaml
