@@ -8,3 +8,5 @@
 !fullchain.pem
 secrets.yaml
 known_devices.yaml
+sensors.yaml
+entity_registry.yaml
